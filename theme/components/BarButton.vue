@@ -59,14 +59,14 @@
                 </svg>
             </template>
         </div>
-        <div class="name">{{ name }}</div>
+        <div class="name" v-if="screenWidth >= 1500">{{ name }}</div>
     </router-link>
 </template>
 
 <script>
 export default {
     name: "BarButton",
-    props: ["svg", "name", "activate", "path"],
+    props: ["svg", "name", "activate", "path", "screenWidth"],
     data() {
         return {};
     },
@@ -74,41 +74,50 @@ export default {
 </script>
 
 <style scoped lang="stylus">
-@import '../style/base-color';
+@import '../style/base-color'
 
 .bar-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 200px;
-    padding: 6px 22px;
-    margin: 10px 0;
-    height: 40px;
-    font-weight: bold;
-    text-decoration: none;
-    color: black;
-    transition: all 0.3s;
+    display flex
+    align-items center
+    justify-content center
+    padding 6px 22px
+    margin 10px 0
+    height 40px
+    font-weight bold
+    text-decoration none
+    color black
+    transition all 0.3s
 
     &:hover {
-        background: color-blue-opacity;
-        border-radius: 30px;
-        color: color-blue;
+        background color-blue-opacity
+        border-radius 30px
+        color color-blue
+    }
+
+    @media (min-width 700px) and (max-width 1500px) {
+        padding 6px
+        width 40px
+        margin 10px auto
+
+        .svg {
+            justify-content center
+        }
     }
 }
 
 .svg {
-    width: 30px;
-    display: flex;
-    align-items: center;
+    width 30px
+    display flex
+    align-items center
 }
 
 .name {
-    width: 170px;
-    text-align: left;
-    font-size: 18px;
+    width 135px
+    text-align left
+    font-size 18px
 }
 
 .activate {
-    color: color-blue;
+    color color-blue
 }
 </style>

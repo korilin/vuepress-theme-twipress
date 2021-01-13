@@ -112,10 +112,22 @@ body {
 }
 
 .main {
-    margin auto
     width 900px
     border-right 1px solid border-line-color
     min-height 100vh
+    position relative
+
+    @media screen and (min-width 1500px) {
+        left calc(100vw / 2 - 450px)
+    }
+
+    @media (min-width 1300px) and (max-width 1500px) {
+        left calc(100vw / 2 - 550px)
+    }
+
+    @media (min-width 1000px) and (max-width 1300px) {
+        left 100px
+    }
 }
 
 .change-enter-active {

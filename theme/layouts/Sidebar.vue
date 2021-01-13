@@ -1,26 +1,31 @@
 <template>
     <div id="sidebar">
-        <div class="PC-siderbar" v-if="screenWidth >= 1024">
+        <div class="PC-siderbar" v-if="screenWidth >= 700">
             <div class="title">
-                @<template>{{ this.$site.title }}</template>
+                @<template v-if="screenWidth >= 1500">{{
+                    this.$site.title
+                }}</template>
             </div>
             <BarButton
                 :svg="'home'"
                 :name="'Home'"
                 :activate="this.$route.path == '/'"
                 :path="'/'"
+                :screenWidth="screenWidth"
             />
             <BarButton
                 :svg="'book'"
                 :name="'Archive'"
                 :activate="this.$route.path == '/archive'"
                 :path="'/archive'"
+                :screenWidth="screenWidth"
             />
             <BarButton
                 :svg="'user'"
                 :name="'About'"
                 :activate="this.$route.path == '/about'"
                 :path="'/about'"
+                :screenWidth="screenWidth"
             />
         </div>
     </div>
@@ -65,8 +70,21 @@ export default {
         color color-blue
     }
 
-    @media screen and (min-width 1400px) {
-        left calc(100vw / 2 - 450px - 250px)
+    @media screen and (min-width 1500px) {
+        left calc(100vw / 2 - 700px)
+    }
+
+    @media (min-width 1300px) and (max-width 1500px) {
+        left calc(100vw / 2 - 650px)
+    }
+
+    @media (min-width 700px) and (max-width 1500px) {
+        width 79px
+        padding 30px 10px 10px
+
+        .title {
+            text-align center
+        }
     }
 }
 </style>

@@ -18,6 +18,9 @@ export default {
 #toolbar {
     position fixed
     height 100vh
-    left 0px
+    width 300px
+    left calc(100vw / 2 + 450px)
+    top 0
+    background black
 }
 </style>

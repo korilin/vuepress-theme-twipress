@@ -127,6 +127,12 @@ body {
 
     @media (min-width 1000px) and (max-width 1300px) {
         left 100px
+        width calc(100vw - 400px)
+    }
+
+    @media (min-width 700px) and (max-width 1000px) {
+        left 100px
+        width calc(100vw - 100px)
     }
 }
 

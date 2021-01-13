@@ -1,0 +1,120 @@
+@import './base-color'
+
+.content__default, .excerpt {
+    line-height 1.65
+
+    a {
+        text-decoration none
+        color color-blue
+    }
+
+    code {
+        font-family CascadiaCode
+        background color-blue-opacity
+        padding 2px 6px
+        border-radius 4px
+        font-size 14px
+        margin 0 5px
+    }
+
+    pre {
+        box-shadow 0 2px 12px 0 rgba(0, 0, 0, 0.1)
+        border 1px solid #ebeef5
+        padding 20px
+        margin 25px 0
+        border-radius 10px
+        overflow auto
+        position relative
+
+        code {
+            background none
+            padding 0
+            font-family CascadiaCode
+            background none
+            line-height 2
+            font-size 13px
+
+            .hljs-built_in {
+                color #42a4d6
+            }
+
+            .keyword {
+                color #e24279
+            }
+
+            .function, .class, .title, .type {
+                color #4394d8
+            }
+
+            .punctuation {
+            }
+
+            .operator {
+                color #2379d2
+            }
+
+            .number, .literal {
+                color #FF9800
+            }
+
+            .doctag, .string {
+                color #009688
+            }
+
+            .comment, .quote {
+                color #9E9E9E
+            }
+
+            .attribute, .name {
+                color red
+            }
+
+            .attr {
+                color #525252
+            }
+
+            .hljs-class, .hljs-title, .hljs-type {
+                color #3f51b5
+            }
+
+            .hljs-params, .hljs-variable {
+                color #458
+            }
+        }
+    }
+
+    table {
+        tr {
+            th {
+                padding 8px 20px
+                color th-font
+
+                &:nth-child(2n) {
+                    background th-color-dual
+                }
+
+                &:nth-child(2n-1) {
+                    background th-color-sing
+                }
+            }
+
+            td {
+                padding 8px 20px
+
+                &:nth-child(2n) {
+                    background td-color-dual
+                }
+
+                &:nth-child(2n-1) {
+                    background td-color-sing
+                }
+            }
+        }
+
+        tbody {
+            tr {
+                border-top 2px solid white
+            }
+        }
+    }
+}

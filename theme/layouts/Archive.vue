@@ -37,24 +37,26 @@
             </div>
         </div>
         <div class="posts">
-            <template v-for="post in posts">
+            <template v-for="post in posts" v-if="post.path != '/about/'">
                 <transition name="show" mode="out-in">
-                    <div class="post" v-if="isShow(post)">
-                        <div class="date">
-                            <Date :date="post.frontmatter.date" />
-                        </div>
-                        <div class="post-info">
-                            <div class="title">
-                                {{ post.title }}
+                    <router-link :to="$withBase(post.path)" class="router-link">
+                        <div class="post" v-if="isShow(post)">
+                            <div class="date">
+                                <Date :date="post.frontmatter.date" />
                             </div>
-                            <div class="label">
-                                <Category
-                                    :category="post.frontmatter.category"
-                                />
-                                <Tags :tags="post.frontmatter.tags" />
+                            <div class="post-info">
+                                <div class="title">
+                                    {{ post.title }}
+                                </div>
+                                <div class="label">
+                                    <Category
+                                        :category="post.frontmatter.category"
+                                    />
+                                    <Tags :tags="post.frontmatter.tags" />
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </router-link>
                 </transition>
             </template>
         </div>
@@ -182,6 +184,11 @@ export default {
     margin-top 20px
     transition all 0.5s
 
+    .router-link {
+        text-decoration none
+        color default-font-color
+    }
+
     .post {
         padding 12px 24px
         position relative
@@ -202,6 +209,10 @@ export default {
                 display flex
                 padding-top 20px
             }
+        }
+
+        &:hover {
+            transform translate3d(-5px, -5px, 5px)
         }
     }
 }

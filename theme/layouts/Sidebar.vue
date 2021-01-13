@@ -44,17 +44,17 @@ export default {
 @import '../style/base-color'
 
 #sidebar {
-    position fixed
-    font-size 19px
 }
 
 .PC-siderbar, .phone-siderbar {
+    position fixed
+    font-size 19px
     height 100vh
     border-right 1px solid border-line-color
 }
 
 .PC-siderbar {
-    width 240px
+    width 209px
     padding 30px 20px 10px
 
     .title {
@@ -63,6 +63,10 @@ export default {
         margin-bottom 20px
         font-weight bolder
         color color-blue
+    }
+
+    @media screen and (min-width 1400px) {
+        left calc(100vw / 2 - 450px - 250px)
     }
 }
 </style>

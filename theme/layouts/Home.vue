@@ -2,6 +2,7 @@
     <div class="home">
         <template v-for="post in pages" v-if="isShow(homeShowCategories, post)">
             <HomePost
+                v-if="post.path != '/about/'"
                 :title="post.title"
                 :date="post.frontmatter.date"
                 :tags="post.frontmatter.tags"

@@ -5,8 +5,8 @@
                 class="avatar"
                 :src="avatar"
                 alt="avatar"
-                width="49px"
-                height="49px"
+                width="99px"
+                height="99px"
             />
             <div class="author-info">
                 <div class="name">{{ name }}</div>
@@ -15,19 +15,40 @@
         </div>
         <div class="community">
             <template v-for="community in communities">
-                <a
-                    class="link"
-                    :key="community.id"
-                    :href="community.url"
-                    target="_blank"
+                <template
+                    v-if="community.url != '' && community.url != undefined"
                 >
-                    <img
-                        width="16px"
-                        :src="community.icon"
-                        v-if="community.icon"
-                    />
-                    <span v-if="community.text">{{ community.text }}</span>
-                </a>
+                    <a
+                        class="link"
+                        :key="community.id"
+                        :href="community.url"
+                        target="_blank"
+                        :title="community.id"
+                    >
+                        <img
+                            width="16px"
+                            :src="community.icon"
+                            v-if="community.icon"
+                        />
+                        <span v-if="community.text">{{ community.text }}</span>
+                    </a>
+                </template>
+                <template v-else>
+                    <span
+                        class="link"
+                        :key="community.id"
+                        :href="community.url"
+                        target="_blank"
+                        :title="community.id"
+                    >
+                        <img
+                            width="16px"
+                            :src="community.icon"
+                            v-if="community.icon"
+                        />
+                        <span v-if="community.text">{{ community.text }}</span>
+                    </span>
+                </template>
             </template>
         </div>
     </div>
@@ -75,7 +96,7 @@ export default {
         }
 
         .description {
-            margin-top 5px
+            margin-top 10px
         }
     }
 }

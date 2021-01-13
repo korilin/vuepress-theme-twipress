@@ -15,6 +15,8 @@
                 </template>
             </transition>
         </div>
+
+        <Toolbar :screenWidth="screenWidth" />
     </div>
 </template>
 
@@ -23,6 +25,7 @@ import Vue from "vue";
 import { setGlobalInfo } from "@app/util";
 
 import Sidebar from "./Sidebar";
+import Toolbar from "./Toolbar";
 import Layout from "./Layout";
 import NoFound from "./404";
 import Post from "../components/Post";
@@ -31,9 +34,11 @@ export default {
     name: "GlobalLayout",
     components: {
         Sidebar,
+        Toolbar,
         Post,
         Layout,
         NoFound,
+        Toolbar,
     },
     created() {
         let route = this.$route.path;
@@ -107,7 +112,7 @@ body {
 }
 
 .main {
-    margin-left 281px
+    margin auto
     width 900px
     border-right 1px solid border-line-color
     min-height 100vh

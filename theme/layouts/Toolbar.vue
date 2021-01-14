@@ -24,7 +24,10 @@ export default {
     },
     methods: {
         postSort(sort) {
-            this.$themeConfig.post_sort = sort;
+            if (this.$themeConfig.post_sort != sort) {
+                this.$themeConfig.post_sort = sort;
+                this.$site.pages.reverse();
+            }
         },
     },
 };

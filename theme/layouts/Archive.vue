@@ -37,28 +37,38 @@
             </div>
         </div>
         <div class="posts">
-            <template v-for="post in posts" v-if="post.path != '/about/'">
-                <transition name="show" mode="out-in">
-                    <router-link :to="$withBase(post.path)" class="router-link">
-                        <div class="post" v-if="isShow(post)">
-                            <div class="date">
-                                <Date :date="post.frontmatter.date" />
-                            </div>
-                            <div class="post-info">
-                                <div class="title">
-                                    {{ post.title }}
+            <transition-group name="show">
+                <template
+                    v-for="(post, index) in posts"
+                    v-if="post.path != '/about/'"
+                >
+                    <div :key="index" v-if="isShow(post)">
+                        <router-link
+                            :to="$withBase(post.path)"
+                            class="router-link"
+                        >
+                            <div class="post">
+                                <div class="date">
+                                    <Date :date="post.frontmatter.date" />
                                 </div>
-                                <div class="label">
-                                    <Category
-                                        :category="post.frontmatter.category"
-                                    />
-                                    <Tags :tags="post.frontmatter.tags" />
+                                <div class="post-info">
+                                    <div class="title">
+                                        {{ post.title }}
+                                    </div>
+                                    <div class="label">
+                                        <Category
+                                            :category="
+                                                post.frontmatter.category
+                                            "
+                                        />
+                                        <Tags :tags="post.frontmatter.tags" />
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </router-link>
-                </transition>
-            </template>
+                        </router-link>
+                    </div>
+                </template>
+            </transition-group>
         </div>
     </div>
 </template>
@@ -213,23 +223,5 @@ export default {
             transform translate3d(-5px, -5px, 5px)
         }
     }
-}
-
-.show-enter-active {
-    transition all 0.3s ease
-}
-
-.show-leave-active {
-    transition all 0.3s ease
-}
-
-.show-enter {
-    transform translate(-20px)
-    opacity 0
-}
-
-.show-leave-to {
-    transform translateX(20px)
-    opacity 0
 }
 </style>

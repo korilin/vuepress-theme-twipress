@@ -132,22 +132,4 @@ body {
         width 100%
     }
 }
-
-.change-enter-active {
-    transition all 0.3s ease
-}
-
-.change-leave-active {
-    transition all 0.3s ease
-}
-
-.change-enter {
-    transform translate(-20px)
-    opacity 0
-}
-
-.change-leave-to {
-    transform translateY(20px)
-    opacity 0
-}
 </style>

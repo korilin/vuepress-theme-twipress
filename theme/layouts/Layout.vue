@@ -1,18 +1,18 @@
 <template>
     <div class="layout">
         <div class="title">
-            {{ page }}
+            {{ layout }}
         </div>
         <Author />
         <CutOffRule />
         <transition name="change" mode="out-in">
-            <template v-if="page == 'Home'">
+            <template v-if="layout == 'Home'">
                 <Home />
             </template>
-            <template v-else-if="page == 'Archive'">
+            <template v-else-if="layout == 'Archive'">
                 <Archive />
             </template>
-            <template v-else-if="page == 'About'">
+            <template v-else-if="layout == 'About'">
                 <About />
             </template>
         </transition>
@@ -27,7 +27,7 @@ import Archive from "./Archive";
 import About from "./About";
 export default {
     name: "Layout",
-    props: ["page"],
+    props: ["layout"],
     components: {
         Author,
         CutOffRule,
@@ -39,8 +39,6 @@ export default {
 </script>
 
 <style scoped lang="stylus">
-@import '../style/base-color'
-
 .layout {
     .title {
         border-bottom 1px solid border-line-color

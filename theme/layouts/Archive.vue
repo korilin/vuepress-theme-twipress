@@ -77,6 +77,19 @@ export default {
         this.categories = this.$themeConfig.all_categories;
         this.tags = this.$themeConfig.all_tags;
     },
+    computed: {
+        postSortChange() {
+            return this.$route;
+        },
+    },
+    watch: {
+        $route() {
+            console.log("sadasd");
+        },
+        postSortChange() {
+            console.log(this.$themeConfig.post_sort);
+        },
+    },
     data() {
         return {
             posts: [],
@@ -118,8 +131,6 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import '../style/base-color'
-
 .statistics {
     font-size 16px
     display flex

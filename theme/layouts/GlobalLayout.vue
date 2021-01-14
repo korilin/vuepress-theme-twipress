@@ -1,13 +1,13 @@
 <template>
     <div class="theme-container">
-        <Sidebar :screenWidth="screenWidth" v-if="page != 'NoFound'" />
+        <Sidebar :screenWidth="screenWidth" v-if="layout != 'NoFound'" />
 
         <div class="main">
             <transition name="change" mode="out-in">
-                <template v-if="page != 'Post' && page != 'NoFound'">
-                    <Layout :page="page" />
+                <template v-if="layout != 'Post' && layout != 'NoFound'">
+                    <Layout :layout="layout" />
                 </template>
-                <template v-else-if="page != 'NoFound'">
+                <template v-else-if="layout != 'NoFound'">
                     <Post />
                 </template>
                 <template v-else>
@@ -42,28 +42,21 @@ export default {
     },
     created() {
         let route = this.$route.path;
-        if (route == "/") this.page = "Home";
-        else if (route == "/archive") this.page = "Archive";
-        else if (route == "/about/" || route == "/about") this.page = "About";
-        else if (this.$page.path) this.page = "Post";
-        else this.page = "NoFound";
-    },
-    computed: {
-        layout() {
-            const layout = this.getLayout();
-            setGlobalInfo("layout", layout);
-            return Vue.component(layout);
-        },
+        if (route == "/") this.layout = "Home";
+        else if (route == "/archive") this.layout = "Archive";
+        else if (route == "/about/" || route == "/about") this.layout = "About";
+        else if (this.$page.path) this.layout = "Post";
+        else this.layout = "NoFound";
     },
     watch: {
         $route() {
             let route = this.$route.path;
-            if (route == "/") this.page = "Home";
-            else if (route == "/archive") this.page = "Archive";
+            if (route == "/") this.layout = "Home";
+            else if (route == "/archive") this.layout = "Archive";
             else if (route == "/about/" || route == "/about")
-                this.page = "About";
-            else if (this.$page.path) this.page = "Post";
-            else this.page = "NoFound";
+                this.layout = "About";
+            else if (this.$page.path) this.layout = "Post";
+            else this.layout = "NoFound";
         },
     },
     mounted() {
@@ -75,36 +68,37 @@ export default {
     data() {
         return {
             screenWidth: document.body.clientWidth,
-            page: "Home",
+            layout: "Home",
         };
     },
-    methods: {
-        getLayout() {
-            if (this.$page.path) {
-                const layout = this.$page.frontmatter.layout;
-                if (
-                    layout &&
-                    (this.$vuepress.getLayoutAsyncComponent(layout) ||
-                        this.$vuepress.getVueComponent(layout))
-                ) {
-                    return layout;
-                }
-                return "Layout";
-            }
-            return "NotFound";
-        },
-    },
+    methods: {},
 };
 </script>
 
 <style lang="stylus">
-@import '../style/base-color'
-@import '../style/default-content'
+@import '../styles/default-content'
+
+::-webkit-scrollbar {
+    width 10px
+    height 10px
+    background-color #ebeef0
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius 10px
+    -webkit-box-shadow inset 0 0 6px rgba(0, 0, 0, 0.2)
+    background-color color-blue-opacity
+}
 
 body {
     margin 0
     color default-font-color
     font-family -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif
+    overflow-y scroll
+
+    a {
+        text-decoration none
+    }
 }
 
 .theme-container {
@@ -113,26 +107,29 @@ body {
 
 .main {
     width 900px
-    border-right 1px solid border-line-color
     min-height 100vh
     position relative
 
-    @media screen and (min-width 1500px) {
-        left calc(100vw / 2 - 450px)
+    @media screen and (min-width 1510px) {
+        left calc(100% / 2 - 450px)
     }
 
-    @media (min-width 1300px) and (max-width 1500px) {
-        left calc(100vw / 2 - 550px)
+    @media (min-width 1310px) and (max-width 1510px) {
+        left calc(100% / 2 - 550px)
     }
 
-    @media (min-width 1000px) and (max-width 1300px) {
+    @media (min-width 1010px) and (max-width 1310px) {
         left 100px
-        width calc(100vw - 400px)
+        width calc(100% - 400px)
     }
 
-    @media (min-width 700px) and (max-width 1000px) {
+    @media (min-width 710px) and (max-width 1010px) {
         left 100px
-        width calc(100vw - 100px)
+        width calc(100% - 100px)
+    }
+
+    @media screen and (max-width 700px) {
+        width 100%
     }
 }
 

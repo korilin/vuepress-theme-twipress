@@ -74,8 +74,6 @@ export default {
 </script>
 
 <style scoped lang="stylus">
-@import '../style/base-color'
-
 .bar-button {
     display flex
     align-items center
@@ -94,7 +92,7 @@ export default {
         color color-blue
     }
 
-    @media (min-width 700px) and (max-width 1500px) {
+    @media (min-width 710px) and (max-width 1510px) {
         padding 6px
         width 40px
         margin 10px auto

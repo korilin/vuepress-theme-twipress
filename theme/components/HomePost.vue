@@ -55,8 +55,6 @@ export default {
 </script>
 
 <style scoped lang="stylus">
-@import '../style/base-color'
-
 .home-posts {
     border-bottom 1px solid border-line-color
     padding 30px 40px

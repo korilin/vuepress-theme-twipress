@@ -46,8 +46,6 @@ export default {
 </script>
 
 <style scoped lang="stylus">
-@import '../style/base-color'
-
 .category {
     display flex
     align-items center

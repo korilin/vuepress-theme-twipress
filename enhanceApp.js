@@ -31,6 +31,7 @@ export default ({
         let db = new Date(b.frontmatter.date);
         return db.getTime() - da.getTime();
     });
+    siteData.themeConfig["post_sort"] = 0;
 
     let all_tags = [];
     let all_categories = [];

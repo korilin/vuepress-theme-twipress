@@ -12,8 +12,6 @@ export default {
 </script>
 
 <style scoped lang="stylus">
-@import '../style/base-color'
-
 .cut-off-rule {
     background background-color
     height 10px

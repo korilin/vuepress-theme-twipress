@@ -75,8 +75,6 @@ export default {
 </script>
 
 <style scoped lang="stylus">
-@import '../style/base-color'
-
 .info {
     padding 20px
     display flex

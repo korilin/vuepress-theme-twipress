@@ -41,8 +41,6 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import '../style/base-color'
-
 .date {
     .svg {
         height 16px

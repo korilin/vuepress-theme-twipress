@@ -66,8 +66,6 @@ export default {
 </script>
 
 <style scoped lang="stylus">
-@import '../style/base-color'
-
 .post {
     padding 24px 40px
 

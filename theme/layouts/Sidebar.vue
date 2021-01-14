@@ -46,8 +46,6 @@ export default {
 </script>
 
 <style scoped lang="stylus">
-@import '../style/base-color'
-
 #sidebar {
 }
 
@@ -70,15 +68,15 @@ export default {
         color color-blue
     }
 
-    @media screen and (min-width 1500px) {
-        left calc(100vw / 2 - 700px)
+    @media screen and (min-width 1510px) {
+        left calc(100% / 2 - 700px)
     }
 
-    @media (min-width 1300px) and (max-width 1500px) {
-        left calc(100vw / 2 - 650px)
+    @media (min-width 1310px) and (max-width 1510px) {
+        left calc(100% / 2 - 650px)
     }
 
-    @media (min-width 700px) and (max-width 1500px) {
+    @media (min-width 710px) and (max-width 1510px) {
         width 79px
         padding 30px 10px 10px
 

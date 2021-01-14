@@ -1,13 +1,7 @@
 <template>
     <div class="author">
         <div class="info">
-            <img
-                class="avatar"
-                :src="avatar"
-                alt="avatar"
-                width="99px"
-                height="99px"
-            />
+            <img class="avatar" :src="avatar" alt="avatar" />
             <div class="author-info">
                 <div class="name">{{ name }}</div>
                 <div class="description">{{ description }}</div>
@@ -18,36 +12,44 @@
                 <template
                     v-if="community.url != '' && community.url != undefined"
                 >
-                    <a
-                        class="link"
-                        :key="community.id"
-                        :href="community.url"
-                        target="_blank"
-                        :title="community.id"
-                    >
-                        <img
-                            width="16px"
-                            :src="community.icon"
-                            v-if="community.icon"
-                        />
-                        <span v-if="community.text">{{ community.text }}</span>
-                    </a>
+                    <div>
+                        <a
+                            class="link"
+                            :key="community.id"
+                            :href="community.url"
+                            target="_blank"
+                            :title="community.id"
+                        >
+                            <img
+                                width="16px"
+                                :src="community.icon"
+                                v-if="community.icon"
+                            />
+                            <span v-if="community.text">{{
+                                community.text
+                            }}</span>
+                        </a>
+                    </div>
                 </template>
                 <template v-else>
-                    <span
-                        class="link"
-                        :key="community.id"
-                        :href="community.url"
-                        target="_blank"
-                        :title="community.id"
-                    >
-                        <img
-                            width="16px"
-                            :src="community.icon"
-                            v-if="community.icon"
-                        />
-                        <span v-if="community.text">{{ community.text }}</span>
-                    </span>
+                    <div>
+                        <span
+                            class="link"
+                            :key="community.id"
+                            :href="community.url"
+                            target="_blank"
+                            :title="community.id"
+                        >
+                            <img
+                                width="16px"
+                                :src="community.icon"
+                                v-if="community.icon"
+                            />
+                            <span v-if="community.text">{{
+                                community.text
+                            }}</span>
+                        </span>
+                    </div>
                 </template>
             </template>
         </div>
@@ -83,6 +85,16 @@ export default {
     .avatar {
         border-radius 50%
         border 1px solid border-line-color
+
+        @media screen and (min-width 700px) {
+            width 99px
+            height 99px
+        }
+
+        @media screen and (max-width 700px) {
+            width 79px
+            height 79px
+        }
     }
 
     .author-info {
@@ -101,6 +113,8 @@ export default {
 
 .community {
     padding 10px 20px 20px
+    display flex
+    flex-wrap wrap
 
     .link {
         text-decoration none

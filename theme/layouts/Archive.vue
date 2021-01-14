@@ -20,6 +20,9 @@
                     :key="category"
                 >
                     {{ category }}
+                    <span class="count">
+                        {{ category_post_count[category] }}</span
+                    >
                 </div>
             </div>
         </div>
@@ -32,7 +35,8 @@
                     @click="selectTag(tag)"
                     :key="tag"
                 >
-                    {{ tag }}
+                    {{ tag
+                    }}<span class="count"> {{ tag_post_count[tag] }}</span>
                 </div>
             </div>
         </div>
@@ -86,12 +90,16 @@ export default {
         this.posts = this.$site.pages;
         this.categories = this.$themeConfig.all_categories;
         this.tags = this.$themeConfig.all_tags;
+        this.category_post_count = this.$themeConfig.category_post_count;
+        this.tag_post_count = this.$themeConfig.tag_post_count;
     },
     data() {
         return {
             posts: [],
             categoires: [],
+            category_post_count: {},
             tags: [],
+            tag_post_count: {},
             categories_select: [],
             tags_select: [],
         };
@@ -170,6 +178,20 @@ export default {
         border 1px solid border-line-color
         margin 5px 10px
         transition all 0.3s
+        line-height 27px
+
+        .count {
+            width 25px
+            height 25px
+            font-size 12px
+            display inline-block
+            line-height 25px
+            text-align center
+            margin-left 5px
+            background #ebeef0
+            border-radius 50%
+            color minor-font-color !important
+        }
 
         &:hover {
             color color-blue
@@ -182,8 +204,17 @@ export default {
         background color-blue !important
         border-color color-blue !important
 
+        .count {
+            background #ffffff
+            color color-blue !important
+        }
+
         &:hover {
             background-color #1a91da !important
+
+            .count {
+                color #1a91da !important
+            }
         }
     }
 }

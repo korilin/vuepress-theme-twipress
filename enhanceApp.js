@@ -31,10 +31,11 @@ export default ({
         let db = new Date(b.frontmatter.date);
         return db.getTime() - da.getTime();
     });
-    siteData.themeConfig["post_sort"] = 0;
 
     let all_tags = [];
     let all_categories = [];
+    let tag_post_count = {};
+    let category_post_count = {};
     for (let i = 0; i < siteData.pages.length; i++) {
         let tags = siteData.pages[i].frontmatter.tags;
         let categories = siteData.pages[i].frontmatter.categories;
@@ -46,6 +47,9 @@ export default ({
                 let tag = tags[ti];
                 if (!all_tags.includes(tag)) {
                     all_tags.push(tag);
+                    tag_post_count[tag] = 1;
+                } else {
+                    tag_post_count[tag]++;
                 }
             }
         }
@@ -56,6 +60,9 @@ export default ({
                     let category = categories[ci];
                     if (!all_categories.includes(category)) {
                         all_categories.push(category);
+                        category_post_count[category] = 1;
+                    } else {
+                        category_post_count[category]++;
                     }
                 }
                 siteData.pages[i].frontmatter.category = categories[0];
@@ -63,6 +70,9 @@ export default ({
                 let category = categories;
                 if (!all_categories.includes(category)) {
                     all_categories.push(category);
+                    category_post_count[category] = 1;
+                } else {
+                    category_post_count[category]++;
                 }
                 siteData.pages[i].frontmatter.category = category;
             }
@@ -70,4 +80,6 @@ export default ({
     }
     siteData.themeConfig["all_tags"] = all_tags;
     siteData.themeConfig["all_categories"] = all_categories;
+    siteData.themeConfig["tag_post_count"] = tag_post_count;
+    siteData.themeConfig["category_post_count"] = category_post_count;
 };

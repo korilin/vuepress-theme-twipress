@@ -48,8 +48,8 @@ export default {
         align-items center
     }
 
-    width 100px
-    margin 0 10px
+    width 90px
+    margin-left 10px
     display flex
     align-items center
     font-size 14px

@@ -34,3 +34,36 @@
     transform translateX(20px)
     opacity 0
 }
+
+::-webkit-scrollbar {
+    width 10px
+    height 10px
+    background-color #ebeef0
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius 10px
+    background-color color-blue-opacity
+}
+
+.search-box {
+    .suggestions {
+        left -67px !important
+        z-index 10
+    }
+
+    @media screen and (max-width 1010px) {
+        text-align left
+
+        input {
+            left 0 !important
+        }
+
+        .suggestions {
+            position fixed !important
+            top 48px !important
+            left calc(11vw - 5px) !important
+            width 78vw !important
+        }
+    }
+}

@@ -42,7 +42,7 @@ export default {
 .layout {
     .title {
         border-bottom 1px solid border-line-color
-        padding 20px
+        padding 20px 20px
         font-weight bold
         font-size 18px
     }

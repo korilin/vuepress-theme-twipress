@@ -1,6 +1,10 @@
 <template>
     <div class="theme-container">
-        <Sidebar :screenWidth="screenWidth" v-if="layout != 'NoFound'" />
+        <Sidebar
+            :screenWidth="screenWidth"
+            :layout="layout"
+            v-if="layout != 'NoFound'"
+        />
 
         <div class="main">
             <transition name="change" mode="out-in">
@@ -78,18 +82,6 @@ export default {
 <style lang="stylus">
 @import '../styles/default-content'
 
-::-webkit-scrollbar {
-    width 10px
-    height 10px
-    background-color #ebeef0
-}
-
-::-webkit-scrollbar-thumb {
-    border-radius 10px
-    -webkit-box-shadow inset 0 0 6px rgba(0, 0, 0, 0.2)
-    background-color color-blue-opacity
-}
-
 body {
     margin 0
     color default-font-color
@@ -128,8 +120,9 @@ body {
         width calc(100% - 100px)
     }
 
-    @media screen and (max-width 700px) {
+    @media screen and (max-width 710px) {
         width 100%
+        margin-bottom 100px
     }
 }
 </style>

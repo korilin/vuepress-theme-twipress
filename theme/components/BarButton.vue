@@ -78,7 +78,7 @@ export default {
     display flex
     align-items center
     justify-content center
-    padding 6px 22px
+    padding 6px 20px
     margin 10px 0
     height 40px
     font-weight bold
@@ -92,27 +92,44 @@ export default {
         color color-blue
     }
 
+    .svg {
+        display flex
+        align-items center
+        justify-content center
+    }
+
     @media (min-width 710px) and (max-width 1510px) {
         padding 6px
         width 40px
         margin 10px auto
 
         .svg {
-            justify-content center
+            width 25px
+            height 25px
         }
     }
-}
 
-.svg {
-    width 30px
-    display flex
-    align-items center
+    @media screen and (max-width 710px) {
+        padding 6px
+        width 30px
+        height 30px
+        margin 0
+
+        .svg {
+            width 25px
+            height 25px
+        }
+    }
 }
 
 .name {
     width 135px
     text-align left
     font-size 18px
+
+    @media screen and (min-width 1510px) {
+        margin-left 20px
+    }
 }
 
 .activate {

@@ -1,6 +1,6 @@
 <template>
     <div id="sidebar">
-        <div class="PC-siderbar" v-if="screenWidth >= 700">
+        <div class="PC-sidebar" v-if="screenWidth >= 700">
             <div class="title">
                 @<template v-if="screenWidth >= 1500">{{
                     this.$site.title
@@ -9,21 +9,44 @@
             <BarButton
                 :svg="'home'"
                 :name="'Home'"
-                :activate="this.$route.path == '/'"
+                :activate="layout == 'Home'"
                 :path="'/'"
                 :screenWidth="screenWidth"
             />
             <BarButton
                 :svg="'book'"
                 :name="'Archive'"
-                :activate="this.$route.path == '/archive'"
+                :activate="layout == 'Archive'"
                 :path="'/archive'"
                 :screenWidth="screenWidth"
             />
             <BarButton
                 :svg="'user'"
                 :name="'About'"
-                :activate="this.$route.path == '/about'"
+                :activate="layout == 'About'"
+                :path="'/about/'"
+                :screenWidth="screenWidth"
+            />
+        </div>
+        <div class="Phone-sidebar" v-if="screenWidth < 700">
+            <BarButton
+                :svg="'home'"
+                :name="'Home'"
+                :activate="layout == 'Home'"
+                :path="'/'"
+                :screenWidth="screenWidth"
+            />
+            <BarButton
+                :svg="'book'"
+                :name="'Archive'"
+                :activate="layout == 'Archive'"
+                :path="'/archive'"
+                :screenWidth="screenWidth"
+            />
+            <BarButton
+                :svg="'user'"
+                :name="'About'"
+                :activate="layout == 'About'"
                 :path="'/about'"
                 :screenWidth="screenWidth"
             />
@@ -35,7 +58,7 @@
 import BarButton from "../components/BarButton";
 export default {
     name: "Sidebar",
-    props: ["screenWidth"],
+    props: ["screenWidth", "layout"],
     components: {
         BarButton,
     },
@@ -49,14 +72,14 @@ export default {
 #sidebar {
 }
 
-.PC-siderbar, .phone-siderbar {
+.PC-sidebar {
     position fixed
     font-size 19px
     height 100vh
     border-right 1px solid border-line-color
 }
 
-.PC-siderbar {
+.PC-sidebar {
     width 209px
     padding 30px 20px 10px
 
@@ -84,5 +107,19 @@ export default {
             text-align center
         }
     }
+}
+
+.Phone-sidebar {
+    position fixed
+    z-index 100
+    bottom 0
+    width 100%
+    height 30px
+    display flex
+    justify-content space-around
+    align-items center
+    padding 10px
+    border-top 1px solid border-line-color
+    background white
 }
 </style>

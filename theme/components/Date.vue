@@ -48,7 +48,7 @@ export default {
         align-items center
     }
 
-    width 90px
+    width 120px
     margin-left 10px
     display flex
     align-items center

@@ -17,24 +17,24 @@ module.exports = {
             communities: [
                 {
                     id: "Github",
-                    icon: "/static/author/github.png",
+                    icon: "/author/github.png",
                     text: "korilin",
                     url: "https://twitter.com/korilin_dev",
                 },
                 {
                     id: "Twitter",
-                    icon: "/static/author/twitter.png",
+                    icon: "/author/twitter.png",
                     text: "korilin_dev",
                     url: "https://twitter.com/korilin_dev",
                 },
                 {
                     id: "Email",
-                    icon: "/static/author/email.png",
+                    icon: "/author/email.png",
                     text: "korilin.dev@gmail.com",
                     url: "",
                 },
             ],
         },
-        homeShowCategories: ["技术理解"],
+        homeShowCategories: ["设计理解", "算法代码"],
     },
 };

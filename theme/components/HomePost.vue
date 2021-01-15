@@ -60,11 +60,6 @@ export default {
     padding 30px 40px
 }
 
-.excerpt {
-    font-size 15px
-    line-height 1.5
-}
-
 .title {
     font-size 16px
     font-weight bold

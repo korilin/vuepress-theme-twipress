@@ -1,9 +1,9 @@
 <template>
     <div class="footer">
-        <CutOffRule />
         <footer>
             <div>
-                © {{ this.$themeConfig.startTime }} - {{ new Date().getFullYear() }}
+                © {{ this.$themeConfig.startTime }} -
+                {{ new Date().getFullYear() }}
                 <svg
                     viewBox="64 64 896 896"
                     data-icon="flag"
@@ -24,7 +24,7 @@
             <div>
                 Based on the
                 <a href="https://vuepress.vuejs.org/" target="_blank"
-                    >Vuepress Powered</a
+                    >VuePress Powered</a
                 >
                 &
                 <a
@@ -33,7 +33,7 @@
                     >Twipress Theme</a
                 >
             </div>
-            <div v-if="this.$themeConfig.ICP != undefine">
+            <div v-if="this.$themeConfig.ICP != undefined">
                 备案号：<a
                     target="_blank"
                     rel="noopener"

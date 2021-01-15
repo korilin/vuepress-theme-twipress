@@ -1,11 +1,16 @@
 module.exports = {
+    base: "/blog/",
     title: "KORILIN",
     description: "Kori Lin BLOG",
     theme: "vuepress-theme-vuetter",
+    head: [
+        ["link", { rel: "icon", href: "/logo.png" }],
+        ["meta", { name: "twitter:card", content: "summary" }],
+    ],
     themeConfig: {
         author: {
             name: "Kori Lin",
-            avatar: "/static/avatar.jpg",
+            avatar: "/avatar.jpg",
             description: "一个热爱开源的开发者",
             communities: [
                 {

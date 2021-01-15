@@ -80,7 +80,6 @@ export default {
 </script>
 
 <style lang="stylus">
-@import '../styles/default-content'
 
 body {
     margin 0

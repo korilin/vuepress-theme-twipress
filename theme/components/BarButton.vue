@@ -1,6 +1,6 @@
 <template>
     <router-link
-        :to="$withBase(path)"
+        :to="path"
         :class="activate ? 'activate bar-button' : 'bar-button'"
     >
         <div class="svg">

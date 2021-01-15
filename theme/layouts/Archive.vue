@@ -48,7 +48,7 @@
                 >
                     <div :key="index" v-if="isShow(post)">
                         <router-link
-                            :to="$withBase(post.path)"
+                            :to="post.path"
                             class="router-link"
                         >
                             <div class="post">

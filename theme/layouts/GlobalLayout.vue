@@ -80,7 +80,6 @@ export default {
 </script>
 
 <style lang="stylus">
-
 body {
     margin 0
     color default-font-color
@@ -124,4 +123,6 @@ body {
         margin-bottom 100px
     }
 }
+
+
 </style>

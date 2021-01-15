@@ -8,6 +8,8 @@ module.exports = {
         ["meta", { name: "twitter:card", content: "summary" }],
     ],
     themeConfig: {
+        startTime: 2018,
+        ICP: "粤ICP备19149652号",
         author: {
             name: "Kori Lin",
             avatar: "/avatar.jpg",

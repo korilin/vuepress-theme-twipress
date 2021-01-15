@@ -16,12 +16,15 @@
                 <About />
             </template>
         </transition>
+        <CutOffRule />
+        <Footer />
     </div>
 </template>
 
 <script>
 import Author from "../components/Author";
 import CutOffRule from "../components/CutOffRule";
+import Footer from "../components/Footer";
 import Home from "./Home";
 import Archive from "./Archive";
 import About from "./About";
@@ -31,6 +34,7 @@ export default {
     components: {
         Author,
         CutOffRule,
+        Footer,
         Home,
         Archive,
         About,

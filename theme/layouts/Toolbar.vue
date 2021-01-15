@@ -119,11 +119,12 @@ export default {
 .toolbar {
     position fixed
     height 100vh
-    width 299px
+    width 298px
     padding-top 50px
     left calc(100% / 2 + 450px)
     top 0
     border-left 1px solid border-line-color
+    border-right 1px solid border-line-color
     background #ffffff
 
     @media (min-width 1310px) and (max-width 1510px) {

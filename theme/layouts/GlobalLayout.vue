@@ -6,21 +6,22 @@
             v-if="layout != 'NoFound'"
         />
 
-        <div class="main">
+        <div class="main" v-if="layout != 'NoFound'">
             <transition name="change" mode="out-in">
                 <template v-if="layout != 'Post' && layout != 'NoFound'">
                     <Layout :layout="layout" />
                 </template>
-                <template v-else-if="layout != 'NoFound'">
-                    <Post />
-                </template>
                 <template v-else>
-                    <NoFound />
+                    <Post />
                 </template>
             </transition>
         </div>
 
-        <Toolbar :screenWidth="screenWidth" />
+        <template v-if="layout == 'NoFound'">
+                <NoFound />
+        </template>
+
+        <Toolbar :screenWidth="screenWidth" v-if="layout != 'NoFound'" />
     </div>
 </template>
 
@@ -65,13 +66,14 @@ export default {
     },
     mounted() {
         var that = this;
+        that.screenWidth = document.body.clientWidth;
         window.onresize = () => {
             that.screenWidth = document.body.clientWidth;
         };
     },
     data() {
         return {
-            screenWidth: document.body.clientWidth,
+            screenWidth: 1920,
             layout: "Home",
         };
     },
@@ -123,6 +125,4 @@ body {
         margin-bottom 100px
     }
 }
-
-
 </style>

@@ -24,10 +24,14 @@
                     </svg>
                 </div>
                 <div class="share">
-                    <TwitterShare :title="page.title" :path="page.path" :width="20" :height="20" />
+                    <ClientOnly>
+                        <TwitterShare :title="page.title" :path="page.path" :width="20" :height="20" />
+                    </ClientOnly>
                 </div>
                 <div class="share">
-                    <WeiboShare :title="page.title" :path="page.path" :width="20" :height="20" />
+                    <ClientOnly>
+                        <WeiboShare :title="page.title" :path="page.path" :width="20" :height="20" />
+                    </ClientOnly>
                 </div>
             </div>
         </div>

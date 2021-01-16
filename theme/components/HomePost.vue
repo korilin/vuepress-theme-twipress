@@ -21,10 +21,14 @@
                 </svg>
             </div>
             <div class="share">
-                <TwitterShare :title="title" :path="path" :width="16" :height="16" />
+                <ClientOnly>
+                    <TwitterShare :title="title" :path="path" :width="16" :height="16" />
+                </ClientOnly>
             </div>
             <div class="share">
-                 <WeiboShare :title="title" :path="path" :width="16" :height="16" />
+                <ClientOnly>
+                    <WeiboShare :title="title" :path="path" :width="16" :height="16" />
+                </ClientOnly>
             </div>
         </div>
     </div>

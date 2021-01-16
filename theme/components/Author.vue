@@ -22,7 +22,7 @@
                         >
                             <img
                                 width="16px"
-                                :src="community.icon"
+                                :src="$withBase(community.icon)"
                                 v-if="community.icon"
                             />
                             <span v-if="community.text">{{
@@ -42,7 +42,7 @@
                         >
                             <img
                                 width="16px"
-                                :src="community.icon"
+                                :src="$withBase(community.icon)"
                                 v-if="community.icon"
                             />
                             <span v-if="community.text">{{

@@ -35,6 +35,6 @@ module.exports = {
                 },
             ],
         },
-        homeShowCategories: ["设计理解", "算法代码"],
+        homeShowCategories: ["设计理解", "算法代码", "解决方案"],
     },
 };

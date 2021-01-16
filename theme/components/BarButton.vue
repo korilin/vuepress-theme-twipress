@@ -85,6 +85,7 @@ export default {
     text-decoration none
     color black
     transition all 0.3s
+    user-select none 
 
     &:hover {
         background color-blue-opacity

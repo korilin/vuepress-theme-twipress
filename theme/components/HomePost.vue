@@ -1,7 +1,7 @@
 <template>
     <div class="home-posts">
         <div class="title">
-            {{ title }}
+            <router-link :to="path">{{ title }}</router-link>
             <Date :date="date" />
         </div>
         <div class="info">
@@ -61,11 +61,15 @@ export default {
 }
 
 .title {
-    font-size 16px
+    font-size 24px
     font-weight bold
     color default-font-color
     display flex
     align-items center
+
+    a {
+        color default-font-color
+    }
 }
 
 .info {

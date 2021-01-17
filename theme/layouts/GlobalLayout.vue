@@ -1,27 +1,31 @@
 <template>
     <div class="theme-container">
-        <Sidebar
-            :screenWidth="screenWidth"
-            :layout="layout"
-            v-if="layout != 'NoFound'"
-        />
+        <transition-group name="change">
+            <template v-if="layout != 'NoFound'">
+                <Sidebar
+                    key="sidebar"
+                    :screenWidth="screenWidth"
+                    :layout="layout"
+                />
+                <div class="main" key="main">
+                    <transition name="change" mode="out-in">
+                        <template
+                            v-if="layout != 'Post' && layout != 'NoFound'"
+                        >
+                            <Layout :layout="layout" />
+                        </template>
+                        <template v-else>
+                            <Post />
+                        </template>
+                    </transition>
+                </div>
+                <Toolbar key="toolbar" :screenWidth="screenWidth" />
+            </template>
 
-        <div class="main" v-if="layout != 'NoFound'">
-            <transition name="change" mode="out-in">
-                <template v-if="layout != 'Post' && layout != 'NoFound'">
-                    <Layout :layout="layout" />
-                </template>
-                <template v-else>
-                    <Post />
-                </template>
-            </transition>
-        </div>
-
-        <template v-if="layout == 'NoFound'">
-                <NoFound />
-        </template>
-
-        <Toolbar :screenWidth="screenWidth" v-if="layout != 'NoFound'" />
+            <template v-else>
+                <NoFound key="404" />
+            </template>
+        </transition-group>
     </div>
 </template>
 

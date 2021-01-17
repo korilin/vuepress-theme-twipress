@@ -71,6 +71,7 @@
 .content__default, .excerpt {
     line-height 1.65
     font-size 15px
+    word-wrap break-word
 
     a {
         text-decoration none
@@ -176,9 +177,12 @@
     }
 
     table {
+        overflow auto
+        display block
+
         tr {
             th {
-                padding 8px 20px
+                padding 8px 15px
                 color th-font
 
                 &:nth-child(2n) {
@@ -191,7 +195,7 @@
             }
 
             td {
-                padding 8px 20px
+                padding 8px 15px
 
                 &:nth-child(2n) {
                     background td-color-dual

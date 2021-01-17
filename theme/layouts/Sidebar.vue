@@ -2,9 +2,7 @@
     <div id="sidebar">
         <div class="PC-sidebar" v-if="screenWidth >= 700">
             <div class="title">
-                @<template v-if="screenWidth >= 1500">{{
-                    this.$site.title
-                }}</template>
+                @<span>{{ this.$site.title }}</span>
             </div>
             <BarButton
                 :svg="'home'"
@@ -91,8 +89,16 @@ export default {
         color color-blue
     }
 
+    span {
+        display none
+    }
+
     @media screen and (min-width 1510px) {
         left calc(100% / 2 - 700px)
+
+        span {
+            display inline
+        }
     }
 
     @media (min-width 1310px) and (max-width 1510px) {
@@ -106,6 +112,10 @@ export default {
         .title {
             text-align center
         }
+    }
+
+    @media screen and (max-width 710px) {
+        display none
     }
 }
 
@@ -121,5 +131,9 @@ export default {
     padding 10px
     border-top 1px solid border-line-color
     background white
+
+    @media screen and (min-width 710px) {
+        display none
+    }
 }
 </style>

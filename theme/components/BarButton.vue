@@ -85,7 +85,7 @@ export default {
     text-decoration none
     color black
     transition all 0.3s
-    user-select none 
+    user-select none
 
     &:hover {
         background color-blue-opacity
@@ -127,9 +127,11 @@ export default {
     width 135px
     text-align left
     font-size 18px
+    display none
 
     @media screen and (min-width 1510px) {
         margin-left 20px
+        display block
     }
 }
 

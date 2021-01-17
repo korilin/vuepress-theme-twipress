@@ -77,7 +77,7 @@ export default {
     },
     data() {
         return {
-            screenWidth: 1920,
+            screenWidth: 0,
             layout: "Home",
         };
     },

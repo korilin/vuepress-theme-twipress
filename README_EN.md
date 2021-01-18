@@ -43,19 +43,19 @@ tags:
 
 ## Theme Config
 
-所有静态文件应当存放在 `.vuepress/public` 目录下，如下面代码示例中的 GitHub 图标存放在 `.vuepress/public/author/github.png`
+All static files should be stored in `.vuepress/public`. As the foolowing code example, the GitHub icon is stored as `.vuepress/public/author/github.png`.
 
-所有博客配置应当遵循 VuePress 要求写在 `.vuepress/config.js` 文件中的`themeConfig`下面，如下：
+All blog configurations should follow the VuePress requirements written in `themeConfig` in the `.vuepress/config.js` file：
 
 ```js
 module.exports = {
     themeConfig: {
-        // 在这写你的博客配置
+        // Write your blog configuration here
     },
 };
 ```
 
-如果你 clone 了本仓库来将本项目作为主题引入，那么提供的`config.js`应当会提供一个正确的模板。
+If you clone this repository to introduce this project as your VuePress theme, the `config.js` will provide a correct template.
 
 ### Blog Start Time
 

@@ -43,7 +43,7 @@ tags:
 
 ## 主题配置
 
-所有静态文件应当存放在 `.vuepress/public` 目录下，如下面代码示例中的 GitHub 图标存放在 `.vuepress/public/author/github.png`
+所有静态文件应当存放在 `.vuepress/public` 目录下，如下面代码示例中 GitHub 图标的存放为 `.vuepress/public/author/github.png`。
 
 所有博客配置应当遵循 VuePress 要求写在 `.vuepress/config.js` 文件中的`themeConfig`下面，如下：
 

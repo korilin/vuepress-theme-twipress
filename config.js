@@ -19,7 +19,7 @@ module.exports = {
                     id: "Github",
                     icon: "/author/github.png",
                     text: "korilin",
-                    url: "https://twitter.com/korilin_dev",
+                    url: "https://github.com/korilin",
                 },
                 {
                     id: "Twitter",

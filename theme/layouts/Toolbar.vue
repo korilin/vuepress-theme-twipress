@@ -65,7 +65,9 @@
             </div>
             <div class="statistics">
                 <div class="title">Article Statistics</div>
-                <div class="data">Article: {{ this.$site.pages.length }}</div>
+                <div class="data">
+                    Article: {{ this.$site.pages.length - 2 }}
+                </div>
                 <div class="data">
                     Categories: {{ this.$themeConfig.all_categories.length }}
                 </div>

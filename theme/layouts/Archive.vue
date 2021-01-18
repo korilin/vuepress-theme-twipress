@@ -2,7 +2,7 @@
     <div class="archive">
         <div class="statistics">
             <div class="lable">Statistics:</div>
-            <div>Article {{ posts.length }}</div>
+            <div>Article {{ posts.length - 2 }}</div>
             <div>Categories {{ categories.length }}</div>
             <div>Tags {{ tags.length }}</div>
         </div>
@@ -44,13 +44,10 @@
             <transition-group name="show">
                 <template
                     v-for="(post, index) in posts"
-                    v-if="post.path != '/about/'"
+                    v-if="post.path != '/about/' && post.path != '/'"
                 >
                     <div :key="index" v-if="isShow(post)">
-                        <router-link
-                            :to="post.path"
-                            class="router-link"
-                        >
+                        <router-link :to="post.path" class="router-link">
                             <div class="post">
                                 <div class="date">
                                     <Date :date="post.frontmatter.date" />

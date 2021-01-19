@@ -188,7 +188,7 @@ If you want the article to show a excerpt, you must add a `<!-- more -->` annota
 
 ## Feedback
 
-At present, the first version of this theme has been completed, but there are still many places that have not been tested. If you have any comments on this theme or have problems in the use process, please open an issue in this repository.
+At present, the first version of this theme has been completed, but there are still some components that have not been tested. If you have any comments on this theme or have problems in the use process, please open an issue in this repository.
 
 If you have suggestions for optimization of the theme design or code, fork the repository and submit a merge reuqest.
 

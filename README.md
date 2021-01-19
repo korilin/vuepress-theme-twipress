@@ -73,6 +73,8 @@ startTime: 2018,
 
 在中国，如果你要将博客部署到自己的云服务器上，并使用自己已备案的域名，需要将备案号放到网站 / 博客底部，你可以在主题添加 ICP 配置，它可以帮助你自动将你的备案号放到博客。
 
+工信部：https://beian.miit.gov.cn/#/Integrated/index
+
 ```js
 // .vuepress/config.js
 // themeConfig
@@ -101,7 +103,7 @@ author: {
 - `id`：该社交信息的 ID，鼠标移动到标签上面会显示此 ID
 - `icon`：显示的图标存储位置（可以不设置，但还没测试过）
 - `text`：图标后面的文本，可以不设置
-- `url`：该社交配置指向的链接，点击图标或文本会打开新窗口跳转到该链接，当没有此配置项或为""时，将不会以链接的方式生成
+- `url`：该配置指向的链接，点击图标或文本会打开新标签页跳转到该链接，当没有此字段或为""时，将不会以链接的方式生成
 
 ```js
 // .vuepress/config.js
@@ -112,7 +114,7 @@ author: {
             id: "Github", // 此信息ID，鼠标移动到标签上面会显示此ID
             icon: "/static/author/github.png", // 图标位置
             text: "korilin", // 图标后面的文本，可以不设置
-            url: "https://github.com/korilin",, // 跳转的链接地址
+            url: "https://github.com/korilin", // 跳转的链接地址
         },
         {
             id: "Email",
@@ -130,7 +132,7 @@ author: {
 
 它可以帮助你隐藏一些你不想直接展示在主页的分类，但要这些文章依旧存在，你可以在归档里看到它们并访问他们。
 
-以列表的方式配置`homeShowCategories`
+以列表的方式配置`homeShowCategories`，如果你希望所有文章都显示在主页，应当将所有分类都添加到这里。
 
 ```js
 // .vuepress/config.js
@@ -144,7 +146,7 @@ homeShowCategories: ["分类1", "分类2"],
 // 博客开始时间
 startTime: 2018,
 // 备案号（如果有）
-ICP: "粤ICP备19149652号",
+ICP: "粤ICP备xxxxx号",
 // 作者信息
 author: {
         name: "", // 作者名称
@@ -155,7 +157,7 @@ author: {
                 id: "Github", // 此信息ID，鼠标移动到标签上面会显示此ID
                 icon: "/static/author/github.png", // 图标位置
                 text: "korilin", // 图标后面的文本，可以不设置
-                url: "https://github.com/korilin",, // 跳转的链接地址
+                url: "https://github.com/korilin", // 跳转的链接地址
             },
             {
                 id: "Twitter",
@@ -172,7 +174,7 @@ author: {
         ],
     },
 // Home主页中要展示的文章的分类，如果希望所有文章都展示，应当将所有分类都添加到此处
-homeShowCategories: ["技术理解"],
+homeShowCategories: ["分类1", "分类2"],
 ```
 
 ## 主页文章摘要

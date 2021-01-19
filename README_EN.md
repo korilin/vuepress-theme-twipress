@@ -59,9 +59,9 @@ If you clone this repository to introduce this project as your VuePress theme, t
 
 ### Blog Start Time
 
-你可以设置你的博客开始年份，它将以“©开始年份 - 至今”的方式显示在博客最底端。
+You can set the year your blog started in, it will show at the bottom of the blog as "@ StartTime - Now".
 
-在配置文件的`themeConfig`下配置`startTime`。
+Configure `startTime` in `themeConfig`.
 
 ```js
 // .vuepress/config.js
@@ -71,54 +71,56 @@ startTime: 2018,
 
 ### ICP
 
-在中国，如果你要将博客部署到自己的云服务器上，并使用自己已备案的域名，需要将备案号放到网站 / 博客底部，你可以在主题添加 ICP 配置，它可以帮助你自动将你的备案号放到博客。
+If you want to deploy your blog to your cloud server and use your domain name, then you need to put the ICP at the bottom of the website/blog. You can add the ICP configuration in `themeConfig`, which will help you automatically put your ICP into your blog.
+
+MIIT: https://beian.miit.gov.cn/#/Integrated/index
 
 ```js
 // .vuepress/config.js
 // themeConfig
-ICP: "备案号",
+ICP: "your icp",
 ```
 
 ### Author
 
-作者信息为博客所有者 / 文章编写者的信息，它将显示在主页、归档、关于页面的上端的个人信息处。
+Author information is the blog owner or article writer information, which will show on Home, Archive and About pages, in the personal infomation section at the top of the page.
 
-你可以在 author 配置相关的信息，最基础的配置包括名称、头像、简介
+You can configure relevant information in `author`. The most basic configuration includes name, avatar and description.
 
 ```js
 // .vuepress/config.js
 // themeConfig
 author: {
     name: "Kori Lin",
-    avatar: "/static/avatar.jpg", // 作者头像
-    description: "一个热爱开源的开发者", // 作者信息的简单描述
+    avatar: "/static/avatar.jpg", // author avatar
+    description: "一个热爱开源的开发者", // author intro
 }
 ```
 
-你还可以配置`communities`将社交平台的链接以“图标 + 描述”的方式放到个人信息处。
+You can also configure `communities` to place links to social platforms in the profile as "icon + description".
 
-它以列表的形式存储每个社交配置，每个配置都有如下 4 个字段：
-- `id`: 该社交信息的 ID，鼠标移动到标签上面会显示此 ID
-- `icon`: 显示的图标存储位置（可以不设置，但还没测试过）
-- `text`: 图标后面的文本，可以不设置
-- `url`: 该社交配置指向的链接，点击图标或文本会打开新窗口跳转到该链接，当没有此配置项或为""时，将不会以链接的方式生成
+It stores each social configuration as a list, and each configuration has the following four fields：
+- `id`: The ID of the social info, which is displayed when the mouse hover the this social label.
+- `icon`: The icon location storage space (can be unset, bug not tested yet)
+- `text`: The text after the icon (can be unset, bug not tested yet)
+- `url`: The link to which this social configuration points. Clicking the icon or text will open a new page to jump to this link. If this field isn't present or is "", there will not generated as a link.
 
 ```js
 // .vuepress/config.js
 // themeConfig
 author: {
-    communities: [ // 社交链接
+    communities: [ // social link
         {
-            id: "Github", // 此信息ID，鼠标移动到标签上面会显示此ID
-            icon: "/static/author/github.png", // 图标位置
-            text: "korilin", // 图标后面的文本，可以不设置
-            url: "https://github.com/korilin",, // 跳转的链接地址
+            id: "Github",
+            icon: "/static/author/github.png",
+            text: "korilin",
+            url: "https://github.com/korilin",
         },
         {
             id: "Email",
             icon: "/static/author/email.png",
             text: "korilin.dev@gmail.com",
-            url: "", // 当url为空或者没设置url时，将不会以链接的方式生成
+            url: "", // When the url isn't present or is "", this configuration will not be generated as a link.
         },
     ],
 }
@@ -126,36 +128,36 @@ author: {
 
 ### HomeShowCategories
 
-该配置项以分类的来显示博客主页的文章，博客主页只会显示在本配置项列表里的分类的文章。
+This configuration manage articles display on the blog home page by category. The blog home page will only display articles which the category in this configuration list.
 
-它可以帮助你隐藏一些你不想直接展示在主页的分类，但要这些文章依旧存在，你可以在归档里看到它们并访问他们。
+It can help you hide articles that you don't want to show directly on the home page, but the articles still exist, you can see them in the archive and access them.
 
-以列表的方式配置`homeShowCategories`
+Configure `homeShowCategories` as a list, if you want to display all posts on the home page, all categories should be added here.
 
 ```js
 // .vuepress/config.js
 // themeConfig
-homeShowCategories: ["分类1", "分类2"],
+homeShowCategories: ["category 1", "category 2"],
 ```
 
 ### Example
 
 ``` js
-// 博客开始时间
+// blog start time
 startTime: 2018,
-// 备案号（如果有）
-ICP: "粤ICP备19149652号",
+// ICP(if have)
+ICP: "粤ICP备xxxxx号",
 // 作者信息
 author: {
-        name: "", // 作者名称
-        avatar: "/static/avatar.jpg", // 作者头像
-        description: "一个热爱开源的开发者", // 作者信息的简单描述
-        communities: [ // 社交链接
+        name: "", // author name
+        avatar: "/static/avatar.jpg", // author avatar
+        description: "一个热爱开源的开发者", // author intro
+        communities: [ // social link
             {
-                id: "Github", // 此信息ID，鼠标移动到标签上面会显示此ID
-                icon: "/static/author/github.png", // 图标位置
-                text: "korilin", // 图标后面的文本，可以不设置
-                url: "https://github.com/korilin",, // 跳转的链接地址
+                id: "Github",
+                icon: "/static/author/github.png",
+                text: "korilin",
+                url: "https://github.com/korilin",
             },
             {
                 id: "Twitter",
@@ -167,27 +169,28 @@ author: {
                 id: "Email",
                 icon: "/static/author/email.png",
                 text: "korilin.dev@gmail.com",
-                url: "", // 当url为空或者没设置url时，将不会以链接的方式生成
+                url: "", // When the url isn't present or is "", this configuration will not be generated as a link.
             },
         ],
     },
-// Home主页中要展示的文章的分类，如果希望所有文章都展示，应当将所有分类都添加到此处
-homeShowCategories: ["技术理解"],
+// The categories of articles which will be displayed on the home page.
+// if you want all articles to be displayed, you should add all categories here.
+homeShowCategories: ["category 1", "category 2"],
 ```
 
 ## Article Excerpt
 
-显示在主页的文章会显示文章摘要，如果没有文章摘要将什么都不会显示。
+Articles displayed on the home page will show the excerpt of the article, there will show a blank if the article has not excerpt.
 
-如果你希望该篇文章可以显示摘要，可以在 markdown 文件中添加 `<!-- more -->`注释，VuePress 将会把该注释前面的内容提取作为摘要。
+If you want the article to show a excerpt, you must add a `<!-- more -->` annotation in the Markdown file and VuePress will extract the content before the annotation as a excerpt.
 
-*注意：VuePress 和 Hexo 不同，它对该注释有严格的格式要求，more 前后应当都有且只有一个空格，如果你写成了这样`<!--more-->`，VuePress 将不会提取出摘要*
+*note: Unlike Hexo, VuePress has strict formatting requirements for this annotation. `more` should be preceded and followed by only one space. If you write like this `<!--more-->`, VuePress will not extract the excerpt.*
 
 ## Feedback
 
-目前该主题完成了初版，但依旧有很多没有进行测试的地方，如果对本主题有什么意见或使用过程出现了问题请在本仓库开启一个 issue。
+At present, the first version of this theme has been completed, but there are still many places that have not been tested. If you have any comments on this theme or have problems in the use process, please open an issue in this repository.
 
-如果对主题设计或代码有优化的建议也可以 fork 本仓库，并提交一个合并请求。
+If you have suggestions for optimization of the theme design or code, fork the repository and submit a merge reuqest.
 
 ## History
 

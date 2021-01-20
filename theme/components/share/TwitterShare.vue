@@ -1,7 +1,7 @@
 <template>
     <a
         class="twitter-share"
-        :href="getTwitterShareLink($withBase(path), title)"
+        :href="getTwitterShareLink(path, title)"
         target="_blank"
         title="Share to Twitter"
     >
@@ -30,12 +30,12 @@ export default {
     props: ["path", "title", "width", "height"],
     methods: {
         getTwitterShareLink: function (path, title) {
-            return (
+            return encodeURI(
                 "https://twitter.com/share?text=" +
-                title +
-                "&url=" +
-                document.URL.substring(0, document.URL.length - 1) +
-                path
+                    title +
+                    "&url=" +
+                    document.URL.substring(0, document.URL.length - 1) +
+                    path
             );
         },
     },

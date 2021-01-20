@@ -25,12 +25,12 @@
                 </div>
                 <div class="share">
                     <ClientOnly>
-                        <TwitterShare :title="page.title" :path="page.path" :width="20" :height="20" />
+                        <TwitterShare :title="page.title" :path="''" :width="20" :height="20" />
                     </ClientOnly>
                 </div>
                 <div class="share">
                     <ClientOnly>
-                        <WeiboShare :title="page.title" :path="page.path" :width="20" :height="20" />
+                        <WeiboShare :title="page.title" :path="''" :width="20" :height="20" />
                     </ClientOnly>
                 </div>
             </div>

@@ -5,7 +5,9 @@ module.exports = {
     theme: "vuepress-theme-vuetter",
     head: [
         ["link", { rel: "icon", href: "/logo.png" }],
-        ["meta", { name: "twitter:card", content: "summary" }],
+        ["meta", { name: "twitter:card", content: "summary_large_image" }],
+        ["meta", { name: "twitter:site", conetent: "KORILIN" }],
+        ["meta", { name: "twitter:creator", conetent: "@Kori_Lin" }],
     ],
     themeConfig: {
         startTime: 2018,

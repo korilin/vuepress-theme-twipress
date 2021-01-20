@@ -1,7 +1,7 @@
 <template>
     <a
         class="weibo-share"
-        :href="getWeiboShareLink($withBase(path), title)"
+        :href="getWeiboShareLink(path, title)"
         target="_blank"
         title="Share to Weibo"
     >
@@ -45,13 +45,13 @@ export default {
     props: ["path", "title", "width", "height"],
     methods: {
         getWeiboShareLink: function (path, title) {
-            return (
+            return encodeURI(
                 "http://service.weibo.com/share/share.php?appkey=&title=" +
-                title +
-                "&url=" +
-                document.URL.substring(0, document.URL.length - 1) +
-                path +
-                "&searchPic=false&style=simple"
+                    title +
+                    "&url=" +
+                    document.URL.substring(0, document.URL.length - 1) +
+                    path +
+                    "&searchPic=false&style=simple"
             );
         },
     },

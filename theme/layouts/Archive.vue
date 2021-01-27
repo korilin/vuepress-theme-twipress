@@ -245,10 +245,17 @@ export default {
                 display flex
                 padding-top 20px
             }
+
+            transition all 0.5s
+            box-shadow 0 0 0 0 #ffffff
         }
 
         &:hover {
             transform translate3d(-5px, -5px, 5px)
+
+            .post-info {
+                box-shadow 5px 5px 10px 0 #d6dfe4
+            }
         }
     }
 }

@@ -30,10 +30,15 @@ module.exports = {
                     url: "https://twitter.com/korilin_dev",
                 },
                 {
+                    id: "Telegram",
+                    icon: "/author/telegram.png",
+                    text: "tg",
+                    url: "https://t.me/korilin",
+                },
+                {
                     id: "Email",
                     icon: "/author/email.png",
                     text: "korilin.dev@gmail.com",
-                    url: "",
                 },
             ],
         },

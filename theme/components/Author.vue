@@ -20,11 +20,13 @@
                             target="_blank"
                             :title="community.id"
                         >
-                            <img
-                                width="16px"
-                                :src="$withBase(community.icon)"
-                                v-if="community.icon"
-                            />
+                            <span class="img-wrap">
+                                <img
+                                    width="16px"
+                                    :src="$withBase(community.icon)"
+                                    v-if="community.icon"
+                                />
+                            </span>
                             <span v-if="community.text">{{
                                 community.text
                             }}</span>
@@ -40,11 +42,13 @@
                             target="_blank"
                             :title="community.id"
                         >
-                            <img
-                                width="16px"
-                                :src="$withBase(community.icon)"
-                                v-if="community.icon"
-                            />
+                            <span class="img-wrap">
+                                <img
+                                    width="16px"
+                                    :src="$withBase(community.icon)"
+                                    v-if="community.icon"
+                                />
+                            </span>
                             <span v-if="community.text">{{
                                 community.text
                             }}</span>
@@ -120,6 +124,14 @@ export default {
         text-decoration none
         color minor-font-color
         margin 0 10px
+        display flex
+
+        .img-wrap {
+            display flex
+            justify-items center
+            align-items center
+            margin-right 5px
+        }
     }
 }
 </style>

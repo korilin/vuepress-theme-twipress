@@ -20,13 +20,13 @@ module.exports = {
                 {
                     id: "Github",
                     icon: "/author/github.png",
-                    text: "korilin",
+                    text: "@korilin",
                     url: "https://github.com/korilin",
                 },
                 {
                     id: "Twitter",
                     icon: "/author/twitter.png",
-                    text: "korilin_dev",
+                    text: "@korilin_dev",
                     url: "https://twitter.com/korilin_dev",
                 },
                 {
@@ -42,6 +42,6 @@ module.exports = {
                 },
             ],
         },
-        homeShowCategories: ["设计理解", "算法代码", "解决方案"],
+        homeShowCategories: ["算法代码", "理解与记录"],
     },
 };

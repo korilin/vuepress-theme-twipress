@@ -14,7 +14,7 @@ module.exports = {
         ICP: "粤ICP备19149652号",
         author: {
             name: "Kori Lin",
-            avatar: "/avatar.jpg",
+            avatar: "/avatar.png",
             description: "一个热爱开源的开发者",
             communities: [
                 {
@@ -42,6 +42,6 @@ module.exports = {
                 },
             ],
         },
-        homeShowCategories: ["算法代码", "理解与记录"],
+        homeNotShowCategories: ["笔记"],
     },
 };

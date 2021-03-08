@@ -1,20 +1,18 @@
 <template>
     <div class="home">
         <transition-group name="show">
-            <template
-                v-for="(post, index) in pages"
-                v-if="isShow(homeShowCategories, post)"
-            >
-                <HomePost
-                    v-if="post.path != '/about/'"
-                    :title="post.title"
-                    :date="post.frontmatter.date"
-                    :tags="post.frontmatter.tags"
-                    :category="post.frontmatter.category"
-                    :excerpt="post.excerpt"
-                    :path="post.path"
-                    :key="index"
-                />
+            <template v-for="(post, index) in pages">
+                <template v-if="isShow(homeNotShowCategories, post)">
+                    <HomePost
+                        :title="post.title"
+                        :date="post.frontmatter.date"
+                        :tags="post.frontmatter.tags"
+                        :category="post.frontmatter.category"
+                        :excerpt="post.excerpt"
+                        :path="post.path"
+                        :key="index"
+                    />
+                </template>
             </template>
         </transition-group>
     </div>
@@ -28,7 +26,7 @@ export default {
     name: "Home",
     created() {
         this.pages = this.$site.pages;
-        this.homeShowCategories = this.$themeConfig.homeShowCategories;
+        this.homeNotShowCategories = this.$themeConfig.homeNotShowCategories;
     },
     components: {
         HomePost,
@@ -38,18 +36,19 @@ export default {
     data() {
         return {
             pages: [],
-            homeShowCategories: [],
+            homeNotShowCategories: [],
         };
     },
     methods: {
-        isShow(homeShowCategories, post) {
+        isShow(homeNotShowCategories, post) {
+            if (post.path == "/about/" || post.path == "/") return false;
             let categories = post.frontmatter.categories;
             if (Array.isArray(categories)) {
                 for (let i = 0; i < categories.length; i++)
-                    if (homeShowCategories.includes(categories[i])) return true;
-
-                return false;
-            } else return homeShowCategories.includes(categories);
+                    if (homeNotShowCategories.includes(categories[i]))
+                        return false;
+                return true;
+            } else return !homeNotShowCategories.includes(categories);
         },
     },
 };

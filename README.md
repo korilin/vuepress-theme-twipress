@@ -18,9 +18,13 @@ Kori Lin 的博客：<https://korilin.com>
 
 当你成功启动了热重载的开发服务器之后，那么继续阅读下面的内容：
 
-目录结构：
-- 首先确保你的 docs 目录下面有一个 README.md 文件，来保证主页面的正常运行，该文件可以什么都不写
-- 在 docs 目录下面创建一个 about 目录，在目录里面创建一个 README.md 文件来支持 About 页面
+首先确保你的 `docs` 目录下面有一个 `README.md` 文件，来保证主页面的正常运行，该文件可以什么都不写，如果按照官方的初始化教程，就会让你创建这个文件了。
+
+在 `docs` 目录 clone 本主题到 `.vuepress` 目录，可以执行下面的命令来完成：
+
+`git clone https://github.com/korilin/vuepress-theme-twipress.git .vuepress`
+
+在 `docs` 目录下面创建一个 `about` 目录，在目录里面创建一个 `README.md` 文件来支持 About 页面
 
 如果你要些文章，这里推荐按照 VuePress 中的推荐，每个文章创建一个目录，用相对路径来引用文章中的静态资源
 https://vuepress.vuejs.org/zh/guide/assets.html#%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84
@@ -96,6 +100,8 @@ Hello VuePress
 要注意在 VuePress 支持的格式与 Hexo 有一点点不一样，它更倾向于 GitHub 上的那种，例如换行时需要多空一行
 
 ```
+
+之后的就是按照自己的需要对本主题进行配置了，主题的配置文件为 `docs/.vuepress/config.js`，阅读以下内容查看所有配置的介绍。
 
 ## 主题配置
 

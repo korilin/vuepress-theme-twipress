@@ -12,6 +12,40 @@ _注：这是个人开发 / 使用的第一个 VuePress 主题，因此不确定
 
 Kori Lin 的博客：<https://korilin.com>
 
+## 如何使用
+
+首先按照 VuePress 官方文档初始化一个 VuePress 项目：https://vuepress.vuejs.org/zh/guide/getting-started.html
+
+当你成功启动了热重载的开发服务器之后，那么继续阅读下面的内容：
+
+目录结构：
+- 首先确保你的 docs 目录下面有一个 README.md 文件，来保证主页面的正常运行，该文件可以什么都不写
+- 在 docs 目录下面创建一个 about 目录，在目录里面创建一个 README.md 文件来支持 About 页面
+
+如果你要些文章，这里推荐按照 VuePress 中的推荐，每个文章创建一个目录，用相对路径来引用文章中的静态资源
+https://vuepress.vuejs.org/zh/guide/assets.html#%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84
+
+并且个人推荐按照分类将文章放在不同文件夹下面，例如我下面的结构：
+
+```
+docs
+    - README.md
+    - .vuepress
+    - about
+        - README.md
+    - 分类1
+        - 文章1
+            README.md
+            img.jpg
+        - 文章2
+            README.md
+    - 分类2
+        - 文章3
+            README.md
+```
+
+文章的 md 文件需要按照下面的 frontmatter 格式去编写
+
 ## 支持的文章 frontmatter
 
 `title`：标题，它将作为文章标题显示在主页、归档页面、文章页面
@@ -39,6 +73,28 @@ tags:
     - 标签1 （以列表的方式配置多个标签，即便你只有一个标签）
     - 标签2
 ---
+```
+
+一个正确的文章 md 文件例子如下：
+
+```md
+---
+title: 你好VuePress
+date: 2021-1-1
+category: 技术文章
+tags:
+    - Vue.js
+    - 前端
+---
+
+## 文章正文
+
+这里和 Hexo 一样写文章正文
+
+Hello VuePress
+
+要注意在 VuePress 支持的格式与 Hexo 有一点点不一样，它更倾向于 GitHub 上的那种，例如换行时需要多空一行
+
 ```
 
 ## 主题配置

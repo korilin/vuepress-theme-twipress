@@ -128,16 +128,16 @@ author: {
 
 ### HomeShowCategories
 
-This configuration manage articles display on the blog home page by category. The blog home page will only display articles which the category in this configuration list.
+This configuration manage articles display on the blog home page by category. The blog home page will not display articles which the category in this configuration list.
 
 It can help you hide articles that you don't want to show directly on the home page, but the articles still exist, you can see them in the archive and access them.
 
-Configure `homeShowCategories` as a list, if you want to display all posts on the home page, all categories should be added here.
+Configure `homeShowCategories` as a list, if you want to display all posts on the home page, you can make it empty.
 
 ```js
 // .vuepress/config.js
 // themeConfig
-homeShowCategories: ["category 1", "category 2"],
+homeNotShowCategories: ["not show category 1", "not show category 2"],
 ```
 
 ### Example
@@ -175,7 +175,7 @@ author: {
     },
 // The categories of articles which will be displayed on the home page.
 // if you want all articles to be displayed, you should add all categories here.
-homeShowCategories: ["category 1", "category 2"],
+homeNotShowCategories: ["not show category 1", "not show category 2"],
 ```
 
 ## Article Excerpt

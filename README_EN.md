@@ -10,6 +10,8 @@ _Note: This is the fist VuePress theme that I developed and used, so I'm not sur
 
 Language: [中文](README.md) | English
 
+**I don't use this theme for my blog anymore, but the color palette is pretty much the same, and then I will try to make a theme out of the current blog style as the second version of this project.**
+
 Kori Lin's Blog: <https://korilin.com>
 
 ## Supported Frontmatter
